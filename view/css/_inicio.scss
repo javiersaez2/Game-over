@@ -1,0 +1,196 @@
+/*
+body {
+	margin: 0;
+}
+*/
+///////////////////////////CARRUSEL///////////////////////
+section {
+    .slideshow-container {
+        max-width: $cienporcentaje;
+        max-height: calc($cienporcentaje / 5);
+        position: relative;
+        margin: auto;
+
+        .mySlides {
+            display: none;
+            min-height: calc($cienporcentaje / 10);
+
+            img {
+                width: 100%;
+                clip-path: polygon(10% 0, 100% 0, 100% 80%, 90% 100%, 0 100%, 0 20%);
+            }
+        }
+
+        .anterior {
+            @include sigant();
+        }
+
+        .siguiente {
+            @include sigant();
+            right: 0;
+        }
+
+        .fade {
+            animation-name: fade;
+            animation-duration: 2.5s;
+        }
+    }
+
+}
+
+@keyframes fade {
+    from {
+        opacity: .2;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* On smaller screens, decrease text size */
+@media (max-width: 400px) {
+
+    .anterior,
+    .siguiente {
+        font-size: calc($cienpx / 10);
+    }
+}
+
+
+
+
+///////////////////////////DESTACADO///////////////////////
+@media screen and (min-width: 1150px) {
+    #destacado-main {
+        display: flex;
+        width: 90%;
+        margin-left: 20vh;
+
+        .bloque-izquierda {
+            .imagen {
+                @include cuadrado-60-80;
+
+                img {
+                    @include tamano-completo;
+                    border-radius: 5px;
+                }
+            }
+        }
+
+        .texto {
+
+            @include sombra-estilizada;
+
+            border-radius: 5px;
+            border-style: solid;
+            border-color: $color-logo;
+
+            padding: $padding-normal;
+
+            margin-top: 5vh;
+            margin-left: -15vh;
+            margin-right: 5vh;
+
+            background-color: $color-blanco;
+
+            @include cuadrado-20-100();
+        }
+    }
+}
+
+//RESPONSIVE 
+
+@media screen and (max-width: 1150px) {
+    #destacado {
+        #destacado-main {
+            @include function_flex();
+
+            .bloque-izquierda {
+                width: 100%;
+
+                .imagen {
+                    display: flex;
+                    justify-content: center;
+
+                    img {
+                        width: 70%;
+                        height: auto;
+                        border-radius: 5px;
+                    }
+                }
+            }
+
+            .texto {
+                @include sombra-estilizada;
+                @include cuadrado-40-60();
+                border-radius: 5px;
+                border-style: solid;
+                border-color: $color-logo;
+
+                padding: $padding-normal;
+                margin-top: 2vh;
+                margin-bottom: 2vh;
+
+                background-color: $color-blanco;
+            }
+        }
+    }
+}
+
+
+///////////////////////////ICONOS///////////////////////
+
+.iconosec {
+    @include grid();
+
+    & :hover {
+        width: 200px;
+        height: 200px;
+
+    }
+
+    article {
+        @include iconos();
+
+        .icono {
+            @include function_flex();
+            height: $cienporcentaje;
+            width: $cienporcentaje;
+
+            img {
+                width: 500px;
+            }
+
+        }
+    }
+
+}
+
+///////////////////////////INFO///////////////////////
+
+.info {
+    padding-top: 2%;
+
+    .info-articulo {
+
+        div {
+            @include function_flex();
+
+            p {
+                @include cuadrado-40-60();
+                @include texto-inicio();
+            }
+        }
+    }
+}
+
+.custom-btm {
+
+    @include function_flex();
+}
+
+
+.btn-10 {
+    @include btn-hover();
+}

@@ -1,0 +1,247 @@
+///////////////////////////////////////BTN DESTACADO
+
+@media screen and (min-width: 1150px) {
+    #destacado {
+        .bloque-boton {
+            margin-top: -20vh;
+            margin-bottom: 20vh;
+            margin-left: 130vh;
+        }
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    #destacado {
+        .bloque-boton {
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            button {
+                margin: auto;
+               
+            }
+        }
+    }
+}
+
+#destacado {
+    .bloque-boton {
+        transform: rotatex(10deg);
+        animation: rotateAngle 12s linear infinite;
+
+        color: $color-negro;
+        button {
+
+            display: block;
+            position: relative;
+            margin: 0.5em 0;
+            padding: .8em 2.2em;
+            cursor: pointer;
+        
+            background: $color-negro;
+            color: $color-logo;
+        
+            border: none;
+            border-radius: .4em;
+        
+            text-transform: uppercase;
+            font-size: 1.4em;
+            font-family: "Work Sans", sans-serif;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+        
+            mix-blend-mode: color-dodge;
+            perspective: 500px;
+            transform-style: preserve-3d;
+        
+            &:before, &:after {
+                --z: 0px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: block;
+                content: '';
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                mix-blend-mode: inherit;
+                border-radius: inherit;
+                transform-style: preserve-3d;
+                transform: translate3d(
+                    calc(var(--z) * 0px), 
+                    calc(var(--z) * 0px), 
+                    calc(var(--z) * 0px)
+                );
+            }
+            
+            span {
+                mix-blend-mode: none;
+                display: block;
+            }
+            
+            &:after {
+                background-color: #5D00FF;
+            }
+            
+            &:before {
+                background-color: #FF1731;
+            }
+            
+            &:hover {
+                background-color: #FFF65B;
+                transition: background .3s 0.1s;
+            }
+            
+            &:hover:before {
+                --z: 0.04;
+                animation: translateWobble 2.2s ease forwards;
+            }
+            
+            &:hover:after {
+                --z: -0.06;
+                animation: translateWobble 2.2s ease forwards;
+            }
+        }
+        
+        @keyframes rotateAngle {
+            0% {
+                transform: rotateY(0deg) rotateX(10deg);
+                animation-timing-function: cubic-bezier(0.61, 1, 0.88, 1);
+            }
+            25% {
+                transform: rotateY(20deg) rotateX(10deg);
+            }
+            50% {
+                transform: rotateY(0deg) rotateX(10deg);
+                animation-timing-function: cubic-bezier(0.61, 1, 0.88, 1);
+            }
+            75% {
+                transform: rotateY(-20deg) rotateX(10deg);
+            }
+            100% {
+                transform: rotateY(0deg) rotateX(10deg);
+            }
+        }
+        
+        @keyframes translateWobble {
+        0% {
+                opacity: 0;
+                transform: translate3d(
+                    calc(var(--z) * 0px), 
+                    calc(var(--z) * 0px), 
+                    calc(var(--z) * 0px)
+                );
+        }
+        16% {
+                transform: translate3d(
+                    calc(var(--z) * 160px), 
+                    calc(var(--z) * 160px), 
+                    calc(var(--z) * 160px)
+                );
+        }
+        28% {
+                opacity: 1;
+                transform: translate3d(
+                    calc(var(--z) * 70px), 
+                    calc(var(--z) * 70px), 
+                    calc(var(--z) * 70px)
+                );
+        }
+        44% {
+                transform: translate3d(
+                    calc(var(--z) * 130px), 
+                    calc(var(--z) * 130px), 
+                    calc(var(--z) * 130px)
+                );
+        }
+        59% {
+                transform: translate3d(
+                    calc(var(--z) * 85px), 
+                    calc(var(--z) * 85px), 
+                    calc(var(--z) * 85px)
+                );
+        }
+        73% {
+                transform: translate3d(
+                    calc(var(--z) * 110px), 
+                    calc(var(--z) * 110px), 
+                    calc(var(--z) * 110px)
+                );
+        }
+            88% {
+                opacity: 1;
+                transform: translate3d(
+                    calc(var(--z) * 90px), 
+                    calc(var(--z) * 90px), 
+                    calc(var(--z) * 90px)
+                );
+        }
+        100% {
+                opacity: 1;
+                transform: translate3d(
+                    calc(var(--z) * 100px), 
+                    calc(var(--z) * 100px), 
+                    calc(var(--z) * 100px)
+                );
+        }
+        }
+        
+    }
+
+}
+
+
+
+
+//////////////////////////////////////////////// BTN INFO
+
+
+
+@mixin btn-hover{
+	color: #fff;
+	border-radius: 5px;
+	padding: 20px 30px;
+    margin-top: 2%;
+	font-family: 'Lato', sans-serif;
+	font-weight: 500;
+	background: transparent;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	position: relative;
+	display: inline-block;
+	box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5), 7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+	outline: none;	
+
+  background: $color-logo;
+  background: linear-gradient(0deg, $color-logo 0%, $color-secundario 100%);
+  color: #fff;
+  border: none;
+  transition: all 0.3s ease;
+  overflow: hidden;
+
+  &:after {
+	position: absolute;
+	content: " ";
+	top: 0;
+	left: 0;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+	transition: all 0.3s ease;
+	-webkit-transform: scale(0.1);
+	transform: scale(0.1);
+  }
+
+  &:hover {
+	color: #fff;
+	border: none;
+	background: transparent;
+
+	&:after {
+	  background: $color-logo;
+	  background: linear-gradient(0deg, $color-logo 0%, $color-secundario 100%);
+	  -webkit-transform: scale(1);
+	  transform: scale(1);
+	}
+  }
+}
