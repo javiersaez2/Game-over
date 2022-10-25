@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 function loadIdiomas() {
     $.ajax({
         type: "GET",
-        url: "controller/controller_index_idiomas.php",
+        url: "../../controller/controller_index_idiomas.php",
         dataType: "json",
         success: function(result) {
             var idiomas = result.idiomasList;
@@ -42,7 +42,7 @@ function loadIdiomas() {
 function loadProductosTodos() {
     $.ajax({
         type: "GET",
-        url: "controller/controller_index_productos.php",
+        url: "../../controller/controller_index_productos.php",
         dataType: "json",
         success: function(result) {
             var Productos = result.productosList;
@@ -83,7 +83,7 @@ function loadProductosTodos() {
 function loadTipoProducto() {
     $.ajax({
         type: "GET",
-        url: "controller/controller_index_tipoProducto.php",
+        url: "../../controller/controller_index_tipoProducto.php",
         dataType: "json",
         success: function(result) {
             var TipoProducto = result.listTipoProductos;
@@ -110,7 +110,7 @@ function loadProductos(idTipo = null) {
 
     $.ajax({
         type: "GET",
-        url: "controller/controller_productoId.php",
+        url: "../../controller/controller_productoId.php",
         data: { 'idTipo': idTipo },
         dataType: "json",
         success: function(result) {

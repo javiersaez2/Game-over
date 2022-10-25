@@ -4,7 +4,8 @@ body {
 }
 */
 ///////////////////////////CARRUSEL///////////////////////
-section {
+.carrusel-seccion {
+   padding-bottom: 2%;
     .slideshow-container {
         max-width: $cienporcentaje;
         max-height: calc($cienporcentaje / 5);
@@ -48,6 +49,7 @@ section {
     }
 }
 
+//RESPONSIVE 
 /* On smaller screens, decrease text size */
 @media (max-width: 400px) {
 
@@ -171,16 +173,17 @@ section {
 
 .info {
     padding-top: 2%;
-
+  
+article{
+    @include function_flex();
+    flex-direction: column;
     .info-articulo {
-
+       @include cuadrado-40-60();
+            @include texto-inicio();
         div {
             @include function_flex();
-
-            p {
-                @include cuadrado-40-60();
-                @include texto-inicio();
-            }
+    
+        }
         }
     }
 }

@@ -23,25 +23,20 @@
 <body>
     <div class="topnav" id="myTopnav">
         <div class="primero">
-            <a href=""><img src="/view/Resources/nav-footer/game over logo.PNG"></a>
+            <a href=""><img src="view/Resources/nav-footer/game over logo.PNG"></a>
         </div>
         <div class="secundo">
-            <a href="" class="skew">Inicio</a>
-            <div class="dropdown" id="dropdownProductos">
-                <button class="dropbtn skew">Productos <i class="fa fa-caret-down"></i></button>
-                <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
+            <a href="../../Index.html" class="skew">Inicio</a>
+            <div class="dropdown">
+                <button class="dropbtn skew" onclick='loadProductosTodos()'>Productos <i class="fa fa-caret-down"></i></button>
+                <div class="dropdown-content" id="dropdownProductos">
                 </div>
             </div>
             <a href="" class="skew">Game Over</a>
             <div class="dropdown">
                 <button class="dropbtn skew"> Idiomas <i class="fa fa-caret-down"></i></button>
                 <div class="dropdown-content" id="dropdownIdiomas">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
+
                 </div>
             </div>
             <a href="" class="skew"><i class="fa-solid fa-user"></i></a>
@@ -51,7 +46,6 @@
 
         <a href="javascript:void(0);" style="font-size:51px;" class="icon" onclick="myFunction()">&#9776;</a>
     </div>
-
 
     <section>
         <article class="gameover-articulo">
@@ -137,7 +131,7 @@
 
         <div class="footer-left">
 
-            <h3><img src="/view/Resources/nav-footer/game over logo.PNG" alt=""></h3>
+            <h3><img src="../Resources/nav-footer/game over logo.PNG" alt=""></h3>
 
         </div>
 
@@ -192,7 +186,7 @@
 
 
 
-    <script src="view/js/nav-footer/index.js"></script>
+    <script src="../js/nav.js"></script>
 </body>
 
 </html>
