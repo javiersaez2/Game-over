@@ -1,59 +1,56 @@
-section{
+.section {
     @include function_flex();
-article{
-    background-color: rgb(237, 237, 237);
-    @include flex-row();
-    width: 90%;
-    margin-top: 2%;
+    article {
+        background-color: rgb(237, 237, 237);
+        @include flex-row();
+        width: 90%;
+        margin-top: 2%;
+        .imagen {
+            width: 45%;
+            height: auto;
+            margin: 2%;
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+        .texto-info {
+            background-color: rgb(222, 222, 222);
+            margin: 2%;
+            width: 55%;
+        }
+        .contacto {
+            font-size: $fontsize-contacto;
+            padding-bottom: 10%;
+        }
+    }
+}
 
-.imagen{
-    width: 45%;
-    height: auto;
+h2 {
     margin: 2%;
-    img{
-        width: 100%;
-        height: auto;
-    }
 }
-.texto-info{
-    background-color: rgb(222, 222, 222);
+
+p {
     margin: 2%;
-    width: 55%;
-  
-}
-.contacto{
-    font-size: $fontsize-contacto;
-    padding-bottom: 10%;
-}
-}
 }
 
-h2{
-margin: 2%;
-}
-p{
-margin: 2%;
-}
-@media (max-width: 1000px){
-section{
-    display: block;
-    width: 100%;
-
-    article{
-        flex-direction: column;
+@media (max-width: 1000px) {
+    .section {
+        display: block;
         width: 100%;
-        @include function_flex();   
-     .imagen{
-        width: 80%;
-        height: auto;
-     }
-     .texto-info{
-        background-color: rgb(222, 222, 222);
-        margin: 1%;
-        width: 80%;
-    
-      
+        article {
+            flex-direction: column;
+            width: 100%;
+            @include function_flex();
+            .imagen {
+                width: 80%;
+                height: auto;
+            }
+            .texto-info {
+                background-color: rgb(222, 222, 222);
+                margin: 1%;
+                width: 80%;
+            }
+        }
     }
-    }
-}
 }

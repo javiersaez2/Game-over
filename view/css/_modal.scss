@@ -1,0 +1,252 @@
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 90%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+/* Modal Content */
+
+.modal-content {
+    margin: auto;
+   // padding: 5px;
+    width: 80%;
+}
+/* The Close Button */
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.login-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: $nav-background;
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+    border-radius: 10px;
+}
+
+.login-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: $nav-texto-color;
+    text-align: center;
+}
+
+.login-box .user-box {
+    position: relative;
+}
+
+.login-box .user-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: $nav-texto-color;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid $nav-texto-color;
+    outline: none;
+    background: transparent;
+}
+
+.login-box .user-box label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: $nav-texto-color;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.login-box .user-box input:focus~label,
+.login-box .user-box input:valid~label {
+    top: -20px;
+    left: 0;
+    color: $nav-background;
+    font-size: 12px;
+}
+
+.login-box form a {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: $nav-texto-color;
+    background-color: lighten($color: $secCol, $amount: 50);
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px;
+    width: 81px;
+    border-radius: 13px;
+    cursor: pointer;
+}
+
+.login-box a:hover {
+    background: lighten($color: $secCol, $amount: 75);
+    color: $nav-texto-color;
+    border-radius: 5px;
+}
+
+
+
+
+
+
+.modalAnadir {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+/* Modal Content */
+
+.modal-content-Anadir {
+    margin: auto;
+    padding: 20px;
+    width: 80%;
+}
+/* The Close Button */
+
+.closeAnadir {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.closeAnadir:hover,
+.closeAnadir:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.login-box-Anadir {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: $nav-background;
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+    border-radius: 10px;
+}
+
+.login-box-Anadir h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: $nav-texto-color;
+    text-align: center;
+}
+
+.login-box-Anadir .user-box-Anadir {
+    position: relative;
+}
+
+.login-box-Anadir .user-box-Anadir input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: $nav-texto-color;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid $nav-texto-color;
+    outline: none;
+    background: transparent;
+}
+
+.login-box-Anadir .user-box-Anadir label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: $nav-texto-color;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.login-box-Anadir .user-box-Anadir input:focus~label,
+.login-box-Anadir .user-box-Anadir input:valid~label {
+    top: -20px;
+    left: 0;
+    color: $nav-texto-color;
+    font-size: 12px;
+}
+
+.login-box-Anadir form a {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: $nav-texto-color;
+    background-color: lighten($color: $secCol, $amount: 50);
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px;
+    width: 81px;
+    border-radius: 13px;
+    cursor: pointer;
+}
+
+.login-box-Anadir a:hover {
+    background: lighten($color: $nav-texto-color, $amount: 75);
+    color: $nav-texto-color;
+    border-radius: 5px;
+}

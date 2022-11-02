@@ -1,31 +1,31 @@
-section {
+.section {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 }
-section article {
+.section article {
   background-color: rgb(237, 237, 237);
   display: flex;
   justify-content: space-around;
   width: 90%;
   margin-top: 2%;
 }
-section article .imagen {
+.section article .imagen {
   width: 45%;
   height: auto;
   margin: 2%;
 }
-section article .imagen img {
+.section article .imagen img {
   width: 100%;
   height: auto;
 }
-section article .texto-info {
+.section article .texto-info {
   background-color: rgb(222, 222, 222);
   margin: 2%;
   width: 55%;
 }
-section article .contacto {
+.section article .contacto {
   font-size: large;
   padding-bottom: 10%;
 }
@@ -39,11 +39,11 @@ p {
 }
 
 @media (max-width: 1000px) {
-  section {
+  .section {
     display: block;
     width: 100%;
   }
-  section article {
+  .section article {
     flex-direction: column;
     width: 100%;
     display: flex;
@@ -51,11 +51,11 @@ p {
     align-items: center;
     justify-content: center;
   }
-  section article .imagen {
+  .section article .imagen {
     width: 80%;
     height: auto;
   }
-  section article .texto-info {
+  .section article .texto-info {
     background-color: rgb(222, 222, 222);
     margin: 1%;
     width: 80%;

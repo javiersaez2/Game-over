@@ -9,6 +9,7 @@ function myFunction() {
 }
 
 document.addEventListener("DOMContentLoaded", function(event) {
+
     loadTipoProducto();
     loadIdiomas()
 
@@ -32,7 +33,6 @@ function loadIdiomas() {
         },
         error: function(xhr) {
             console.log('1', xhr.responseText)
-            alert("An error occured: " + xhr.status + " " + xhr.statusText);
         },
 
     });
@@ -49,13 +49,12 @@ function loadProductosTodos() {
             console.log(result.productosList)
             var newRow = '';
             for (let i = 0; i < Productos.length; i++) {
-                newRow += "<div class='card'><img src='" + Productos[i].foto + "'>" +
+                newRow += "<div class='card' value='" + Productos[i].id + "'onclick='loadFichaProducto(" + Productos[i].id + ")'>" +
+                    "<img src='view/Resources/images_productos/" + Productos[i].foto + "'>" +
                     "<div class='product' id=''>" +
                     "<span class='product-name' id='product-name'>" + Productos[i].titulo + "</span>" +
                     "<div class='product-rating'>"
-                for (let index = 0; index < Productos[i].valoracion; index++) {
-                    newRow += "<i class = 'fa-solid fa-star' > </i>"
-                }
+                newRow += NewValoracionRow(Productos[i].valoracion);
                 newRow += "</div>" +
                     "</div>" +
                     "<div class='price' id=''>" +
@@ -65,12 +64,11 @@ function loadProductosTodos() {
                     "</div>"
 
             };
-            document.getElementById("card").innerHTML += newRow;
-            //newRow = "</div>";
+            document.getElementById("content").innerHTML = "";
+            document.getElementById("content").innerHTML += newRow;
         },
         error: function(xhr) {
             console.log(xhr.responseText)
-            alert("An error occured: " + xhr.status + " " + xhr.responseText);
         },
 
     });
@@ -90,23 +88,21 @@ function loadTipoProducto() {
 
             var newRow = '';
             for (let i = 0; i < TipoProducto.length; i++) {
-                newRow += "<a href='#!' onclick='loadProductos(" + TipoProducto[i].id + ")'>" + TipoProducto[i].nombre + "</a>"
-                    // onclick="loadProductos( TipoProducto[i].idtipo)"
+                newRow += "<a  onclick='loadProductos(" + TipoProducto[i].id + ")'>" + TipoProducto[i].nombre + "</a>"
             }
 
             document.getElementById("dropdownProductos").innerHTML += newRow;
 
         },
-        error: function(xhr) {
-            alert("An error occured: " + xhr.status + " " + xhr.statusText);
-        },
+        error: function(xhr) {},
 
     });
 };
 
 
+
 function loadProductos(idTipo = null) {
-    document.getElementById("card").innerHTML = '';
+    document.getElementById("content").innerHTML = '';
 
     $.ajax({
         type: "GET",
@@ -118,13 +114,11 @@ function loadProductos(idTipo = null) {
             console.log(result.productosListId)
             var newRow = '';
             for (let i = 0; i < ProductosId.length; i++) {
-                newRow += "<div class='card'><img src='" + ProductosId[i].foto + "'>" +
+                newRow += "<div class='card' value='" + ProductosId[i].id + "' onclick='loadFichaProducto(" + ProductosId[i].id + ")'><img src='view/Resources/images_productos/" + ProductosId[i].foto + "'>" +
                     "<div class='product' id=''>" +
                     "<span class='product-name' id='product-name'>" + ProductosId[i].titulo + "</span>" +
                     "<div class='product-rating'>"
-                for (let index = 0; index < ProductosId[i].valoracion; index++) {
-                    newRow += "<i class = 'fa-solid fa-star' > </i>"
-                }
+                newRow += NewValoracionRow(ProductosId[i].valoracion);
                 newRow += "</div>" +
                     "</div>" +
                     "<div class='price' id=''>" +
@@ -134,13 +128,19 @@ function loadProductos(idTipo = null) {
                     "</div>"
 
             };
-            document.getElementById("card").innerHTML += newRow;
-            //newRow = "</div>";
+            document.getElementById("content").innerHTML += newRow;
         },
         error: function(xhr) {
             console.log(xhr.responseText)
-            alert("An error occured: " + xhr.status + " " + xhr.responseText);
         },
 
     });
 };
+
+function loadGameOver() {
+    swap_block("content", "view/html/gameover.html");
+}
+
+function loadAdmin() {
+    swap_block_callback("content", "view/html/pageAdmin.html", cargarProdAdmin);
+}

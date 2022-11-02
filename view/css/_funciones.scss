@@ -18,6 +18,13 @@
 	justify-content: center;
 }
 
+@mixin flex-wrap-center {
+    display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center
+}
+
 //TAMAÑOS
 
 @mixin cuadrado-60-80{
@@ -46,11 +53,17 @@
     gap: $tamano-gap;
     grid-auto-flow: dense;
     justify-content: center;
-    grid-template  : auto/repeat(auto-fill, minmax(10em, 10em));
+    grid-template  : auto/repeat(auto-fill, minmax(12em, 12em));
     
 }
 
+//BORDES
 
+@mixin borde-principal {
+	border-style: solid;
+	border-radius: 5px;
+	border-color: $rojo-principal;
+}
 
 //SOMBRAS
 
@@ -58,6 +71,14 @@
     box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
 }
 
+@mixin glass {
+
+	box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);	
+	border-radius: 5px;
+	background-color: rgba(255, 255, 255, .15);
+	
+	backdrop-filter: blur(5px);
+}
 
 //TEXTO
 @mixin texto-inicio {
@@ -131,6 +152,7 @@
     background-color: $color-logo;
     border-radius: calc($cienporcentaje/10);
     box-shadow: 10px 10px 16px -6px rgba(0,0,0,0.75);
+
 
     
 }

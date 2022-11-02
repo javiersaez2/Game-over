@@ -1,0 +1,166 @@
+<div class="buttonAnadir-Buscador">
+    <button id="btnModalAnadir" onclick="cargarModalAnadir();loadTipoProductoSelector()">Anadir producto</button>
+    <br>
+    <br>
+    <br>
+    <div id="buscador">
+        <input type="text" id="textBuscador">
+        <button onclick="buscarNombre()" id="clickBuscar">Buscar</button>
+    </div>
+
+</div>
+
+
+
+
+
+<div id="myModalAnadir" class="modalAnadir">
+    <div class="modal-content-Anadir">
+        <div class="login-box-Anadir" id="modalCerrarAnadir">
+            <span class="closeAnadir" onclick="closeModalAnadir()">&times;</span>
+            <h2>Anadir producto</h2>
+            <form method="POST" class="register-form" id="insert">
+                <div class="form-group">
+                    <label>titulo :</label>
+                    <input type="text" name="titulo" id="titulo" />
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Tipo Producto :</label>
+                        <div class="form-select">
+                            <select name="TipoProducto" id="TipoProducto">
+                                    </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>valoracion : </label>
+                        <div class="form-select">
+                            <select name="valoracion" id="valoracion">
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        
+                                    </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>precio :</label>
+                        <input type="text" name="precio" id="precio" />
+                    </div>
+                    <div class="form-group">
+                        <label>stock :</label>
+                        <input type="text" name="stock" id="stock" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Foto :</label>
+                    <input type="text" name="foto" id="foto" />
+                </div>
+                <div class="form-group">
+                    <label>descripcion :</label>
+                    <textarea type="text" name="descripcion" id="descripcion"></textarea>
+                </div>
+                <div class="form-submit">
+                    <input class="submit" id="submit" onclick="execInsert()" placeholder="añadir" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div id="myModalModificar" class="modalAnadir">
+    <div class="modal-content-Anadir">
+        <div class="login-box-Anadir" id="modalCerrarModificar">
+            <span class="closeAnadir" onclick="cerrarModal('myModalModificar')">&times;</span>
+            <h2>Anadir producto</h2>
+            <form method="POST" class="register-form" id="insert">
+                <div class="form-group">
+                    <label>titulo :</label>
+                    <input type="text" name="titulo" id="modificar-titulo" />
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Tipo Producto :</label>
+                        <div class="form-select">
+                            <select name="TipoProducto" id="modificar-TipoProducto">
+                                    </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>valoracion : </label>
+                        <div class="form-select">
+                            <select name="valoracion" id="modificar-valoracion">
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        
+                                    </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>precio :</label>
+                        <input type="text" name="precio" id="modificar-precio" />
+                    </div>
+                    <div class="form-group">
+                        <label>stock :</label>
+                        <input type="text" name="stock" id="modificar-stock" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Foto :</label>
+                    <input type="text" name="foto" id="modificar-foto" />
+                </div>
+                <div class="form-group">
+                    <label>descripcion :</label>
+                    <textarea type="text" name="descripcion" id="modificar-descripcion"></textarea>
+                </div>
+                <input type="hidden" id="modificar-id">
+                <div class="form-submit">
+                    <input class="submit" id="submit" onclick="guardarModificar()" placeholder="Guardar" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<br>
+<br>
+<br>
+<div class="pagina">
+    <div class="menuright">
+        <ul>
+            <li class="dropdownFilter">
+                <input type="checkbox" />
+                <a href="#" data-toggle="dropdownFilter">Filtrar por Tipo</a>
+                <ul class="dropdownFilter-menu" id="dropdownFilterTipo-menu">
+
+                </ul>
+            </li>
+            <li class="dropdownFilter">
+                <input type="checkbox" />
+                <a href="#" data-toggle="dropdownFilter">Filtrar por precio</a>
+                <ul class="dropdownFilter-menu" id="dropdownFilterPrecio-menu">
+                    <li value="50" onclick="filtrarPrecio(50)"> menos que 50</li>
+                    <li value="100" onclick="filtrarPrecio(100)"> menos que 100 </li>
+                    <li value="200" onclick="filtrarPrecio(200)"> menos que 200 </li>
+                    <li value="1000" onclick="filtrarPrecio(1000)"> menos que 1000 </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <section id="card">
+    </section>
+</div>

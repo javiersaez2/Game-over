@@ -4,12 +4,20 @@ $color-secundario:#F08080;
 $color-blanco : #FAF9F8;
 $color-negro : #111111;
 
+$nav-background: #fbfafb;
+$nav-texto-color: #181818;
+$primWhite: white;
+$secCol: #ad083f;
+
 $color-fondo-boton:rgba(0,0,0,0.8);
 $color-rgb:rgba(168, 0, 56, 0.3);
 
-$color-boton1:white;
-$color-boton2:black;
+$color-white:white;
+$color-black:black;
 
+$rojo-principal : #A80038;
+$blanco-secundario : #FAF9F8;
+$negro-terciario : #111111;
 
 /////////////////TAMAÑOS
 $completo : 100%;
@@ -18,6 +26,9 @@ $padding-normal: 0.5em;
 $cienporcentaje:100%;
 $cienvh:100vh;
 $cienpx:100px;
+
+$tamano-iconos:150px;
+$tamano-gap:2rem;
 
 $fontsize-contacto: large;
 
@@ -28,5 +39,3 @@ $botones-padding:16px;
 $botones-margin:-22px;
 
 //Iconos
-$tamano-iconos:150px;
-$tamano-gap:2rem;

@@ -7,7 +7,8 @@ class productos{
     public $foto;
     public $titulo;
     public $valoracion;
-    public $idTipo;
+    public $descripcion;
+    public $tipoProducto;
 
     /**
      * Get the value of id
@@ -110,21 +111,21 @@ class productos{
     }
 
     /**
-     * Get the value of idTipo
+     * Get the value of tipoProducto
      */ 
-    public function getIdTipo()
+    public function gettipoProducto()
     {
-        return $this->idTipo;
+        return $this->tipoProducto;
     }
 
     /**
-     * Set the value of idTipo
+     * Set the value of tipoProducto
      *
      * @return  self
      */ 
-    public function setIdTipo($idTipo)
+    public function settipoProducto($tipoProducto)
     {
-        $this->idTipo = $idTipo;
+        $this->tipoProducto = $tipoProducto;
 
         return $this;
     }
@@ -147,6 +148,26 @@ class productos{
         $this->titulo = $titulo;
 
         return $this;
+    }
+
+        /**
+     * Get the value of id
+     */ 
+    public function getDescripcion()
+    {
+        return $this->descripcion;
+    }
+
+    /**
+     * Set the value of id
+     *
+     * @return  self
+     */ 
+    public function setDescripcion($id)
+    {
+        $this->id = $id;
+
+        return $this->descripcion;
     }
 }
 ?>

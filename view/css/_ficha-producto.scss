@@ -1,0 +1,61 @@
+#ficha-producto {
+    //background-color: black;
+    @include flex-row;
+    flex-wrap: wrap;
+    height: $completo;
+    .borde {
+        @include borde-principal;
+
+        min-width: 300px;
+        height: 70vh;
+
+        margin-top: 5vh;
+        margin-bottom: 2vh;
+    }
+    #bloque-imagen {
+        width: 70vh;
+        //height: 70vh;
+        overflow: hidden;
+        img {
+            width: $completo;
+            height: $completo;
+        } 
+    }
+    .bloque-texto {
+        width: 25%;
+
+        @include flex-wrap-center;
+    }
+
+    .bloque-descripcion {
+        div {
+            @include flex-wrap-center;
+            width: 90%;
+
+            .fa-star {
+                font-size: 150%;
+            }
+        }
+
+        #descripcion-producto {
+            overflow: auto;
+            height: 50%;
+        }
+    }
+
+    .bloque-botones {
+        #precio-producto {
+            
+            @include borde-principal;
+
+            font-size: 200%;
+            width: 60%;
+
+            text-align: center;
+        }
+
+    }
+}
+
+//RESPONSIVE 
+
